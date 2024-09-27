@@ -4,7 +4,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.validation.ValidationException;
 import javax.validation.constraints.Email;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
 @Data
@@ -26,5 +28,14 @@ public class UserDTO {
     private String password;
 
     @NotNull(message = "Age cannot be empty")
+    @Min(value = 0, message = "Age cannot be negative")
     private int age;
+
+    private String role;
+
+    public void validateAge(int age) {
+        if (age < 0) {
+            throw new ValidationException("Age cannot be negative");
+        }
+    }
 }

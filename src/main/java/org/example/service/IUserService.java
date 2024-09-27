@@ -4,9 +4,17 @@ import org.example.dto.LoginDTO;
 import org.example.dto.UserDTO;
 import org.example.model.User;
 
+import java.util.Map;
+
 public interface IUserService {
 
-    UserDTO registerUser(UserDTO userDTO);
+    Map<String, Object> registerUser(UserDTO userDTO);
 
-    String login(LoginDTO loginDTO);
+    Map<String, Object> login(LoginDTO loginDTO);
+
+    Map<String, Object> updateUser(String id, UserDTO userDTO);
+
+    Map<String,Object> createResponse(String message, User user);
+
+    Map<String, Object> getUser(String id);
 }
