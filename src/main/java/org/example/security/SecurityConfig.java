@@ -3,6 +3,7 @@ package org.example.security;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
@@ -12,7 +13,7 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 @Configuration
-@EnableWebSecurity
+@EnableGlobalMethodSecurity(prePostEnabled = true)
 public class SecurityConfig {
 
     @Autowired
@@ -25,8 +26,7 @@ public class SecurityConfig {
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS) // Disable session
                 .and()
                 .authorizeRequests()
-                .antMatchers("/appActivitats/admin").hasRole("ADMIN")
-                .antMatchers("/appActivitats/user", "/appActivitats/login").permitAll()
+                .antMatchers("/appActivitats/user", "/appActivitats/login", "/appActivitats/activity/export").permitAll()
                 .anyRequest().authenticated();
 
         http.addFilterBefore(jwtAthenticationFilter, UsernamePasswordAuthenticationFilter.class);

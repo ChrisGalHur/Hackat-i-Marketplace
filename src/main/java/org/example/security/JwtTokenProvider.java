@@ -15,12 +15,13 @@ public class JwtTokenProvider {
     public static final SecretKey SECRET = new SecretKeySpec(new byte[64], "HmacSHA256");
     public static final long EXPIRATION_TIME = 86400000; // 1 day
 
-    public String generateToken(String email) {
+    public String generateToken(String email, String role) {
         Date now = new Date();
         Date expiryDate = new Date(now.getTime() + EXPIRATION_TIME);
 
         return Jwts.builder()
                 .subject(email)
+                .claim("authorities", role)
                 .issuedAt(new Date())
                 .expiration(expiryDate)
                 .signWith(SECRET)

@@ -1,7 +1,10 @@
-{
-  "name": "Admin",
-  "secondName": "User",
-  "email": "admin@example.com",
-  "password": "adminpassword",
-  "roles": ["ADMIN"]
-}
+[
+  {
+    "name": "Sauron",
+    "secondName": "Dark Lord",
+    "email": "sauron@mordor.com",
+    "password": "OnePassToRuleThemAll",
+    "age": 6000,
+    "roles": ["ADMIN"]
+  }
+]

@@ -5,8 +5,9 @@ import org.example.dto.LoginDTO;
 import org.example.dto.UserDTO;
 import org.example.exception.InvalidPasswordException;
 import org.example.exception.UserAlreadyExistsException;
-import org.example.exception.UserNotFound;
+import org.example.exception.UserNotFoundException;
 import org.example.exception.UserServiceException;
+import org.example.model.Activity;
 import org.example.model.User;
 import org.example.repository.UserRepository;
 import org.example.security.JwtTokenProvider;
@@ -22,6 +23,7 @@ import java.util.Map;
 @Service
 public class UserServiceImpl implements IUserService {
 
+    //region PROPERTIES
     @Autowired
     private UserRepository userRepository;
 
@@ -33,7 +35,9 @@ public class UserServiceImpl implements IUserService {
 
     @Autowired
     private ModelMapper modelMapper;
+    //endregion PROPERTIES
 
+    //region METHODS
     @Override
     public Map<String, Object> registerUser(UserDTO userDTO) {
         try {
@@ -61,14 +65,14 @@ public class UserServiceImpl implements IUserService {
     public Map<String, Object> login(LoginDTO loginDTO) {
         try{
             User user = userRepository.findByEmail(loginDTO.getEmail())
-                    .orElseThrow(() -> new UserNotFound("User with email " + loginDTO.getEmail() + " not found"));
+                    .orElseThrow(() -> new UserNotFoundException("User with email " + loginDTO.getEmail() + " not found"));
 
             if(!passwordEncoder.matches(loginDTO.getPassword(), user.getPassword())){
                 throw new InvalidPasswordException("Invalid password");
             }
 
             return createResponse("User logged in successfully", user);
-        }catch (UserNotFound | InvalidPasswordException e){
+        }catch (UserNotFoundException | InvalidPasswordException e){
             log.error("Login error: {}", e.getMessage());
             throw e;
         }catch (Exception e){
@@ -84,7 +88,7 @@ public class UserServiceImpl implements IUserService {
 
             //Search the user by id
             User user = userRepository.findById(id)
-                    .orElseThrow(() -> new UserNotFound("User with id " + id + " not found"));
+                    .orElseThrow(() -> new UserNotFoundException("User with id " + id + " not found"));
 
             //Update the user
             user.setName(userDTO.getName());
@@ -101,7 +105,7 @@ public class UserServiceImpl implements IUserService {
             user = userRepository.save(user);
 
             return  createResponse("User updated successfully", user);
-        }catch (UserNotFound e){
+        }catch (UserNotFoundException e){
             log.error("Error updating user: {}", e.getMessage());
             throw e;
         }catch (Exception e){
@@ -115,10 +119,10 @@ public class UserServiceImpl implements IUserService {
         try{
             //Search the user by id
             User user = userRepository.findById(id)
-                    .orElseThrow(() -> new UserNotFound("User with id " + id + " not found"));
+                    .orElseThrow(() -> new UserNotFoundException("User with id " + id + " not found"));
 
             return createResponse("User found", user);
-        }catch (UserNotFound e){
+        }catch (UserNotFoundException e){
             log.error("Error getting user: {}", e.getMessage());
             throw e;
         }catch (Exception e){
@@ -128,16 +132,46 @@ public class UserServiceImpl implements IUserService {
     }
 
     @Override
-    public Map<String,Object> createResponse(String message, User user){
+    public Map<String, Object> deleteUser(String id) {
+        try{
+            //Search the user by id
+            User user = userRepository.findById(id)
+                    .orElseThrow(() -> new UserNotFoundException("User with id " + id + " not found"));
+
+            //Delete the user
+            userRepository.delete(user);
+
+            return createResponse("User deleted successfully", user);
+        }catch (UserNotFoundException e){
+            log.error("Error deleting user: {}", e.getMessage());
+            throw e;
+        }catch (Exception e){
+            log.error("Error deleting user: {}", e.getMessage());
+            throw new UserServiceException("Error deleting user: "+ e.getMessage());
+        }
+    }
+    //endregion METHODS
+
+    //region EXTRA METHODS
+    private Map<String, Object> createResponse(String message, User user){
         Map<String, Object> response = new HashMap<>();
+        UserDTO userDTO = modelMapper.map(user, UserDTO.class);
+
         response.put("message", message);
-        response.put("token", tokenProvider.generateToken(user.getEmail()));
+        response.put("token", tokenProvider.generateToken(userDTO.getEmail(), userDTO.getRole()));
         response.put("user", Map.of(
-                "id", user.getId(),
-                "name", user.getName(),
-                "secondName", user.getSecondName(),
-                "email", user.getEmail()
+                "id", userDTO.getId(),
+                "name", userDTO.getName(),
+                "secondName", userDTO.getSecondName(),
+                "email", userDTO.getEmail(),
+                "age", userDTO.getAge(),
+                "role", userDTO.getRole()
         ));
         return response;
     }
+
+    public boolean existsById(String id) {
+        return userRepository.existsById(id);
+    }
+    //endregion EXTRA METHODS
 }

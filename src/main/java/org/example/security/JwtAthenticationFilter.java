@@ -3,6 +3,8 @@ package org.example.security;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
 import org.springframework.stereotype.Component;
@@ -14,6 +16,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.List;
 
 @Component
 public class JwtAthenticationFilter extends OncePerRequestFilter {
@@ -34,8 +38,10 @@ public class JwtAthenticationFilter extends OncePerRequestFilter {
                     .getBody();
 
             String email = claims.getSubject();
+            String role = (String) claims.get("authorities");
 
-            UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(email, null, null);
+            List<GrantedAuthority> authorities = List.of(new SimpleGrantedAuthority("ROLE_" + role));
+            UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(email, null, authorities);
             authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
 
             SecurityContextHolder.getContext().setAuthentication(authentication);
@@ -54,6 +60,15 @@ public class JwtAthenticationFilter extends OncePerRequestFilter {
 
 
     private boolean validateToken(String jwt) {
+        try {
+            Jwts.parser().setSigningKey(SECRET).build().parseClaimsJws(jwt);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    private boolean grantedAuthorities(String jwt) {
         try {
             Jwts.parser().setSigningKey(SECRET).build().parseClaimsJws(jwt);
             return true;

@@ -14,6 +14,8 @@ import javax.validation.constraints.NotNull;
 @NoArgsConstructor
 public class UserDTO {
 
+    private String id;
+
     @NotNull(message = "Name cannot be empty")
     private String name;
 

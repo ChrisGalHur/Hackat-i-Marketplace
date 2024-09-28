@@ -14,7 +14,7 @@ public interface IUserService {
 
     Map<String, Object> updateUser(String id, UserDTO userDTO);
 
-    Map<String,Object> createResponse(String message, User user);
-
     Map<String, Object> getUser(String id);
+
+    Map<String, Object> deleteUser(String id);
 }
