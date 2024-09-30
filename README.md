@@ -1,15 +1,11 @@
 - [Documentación en Español](docs/README_es.md)
 - [Documentació en Catalá](docs/README_cat.md)
 
-
 # Users and Activities Management App - Hackathon IT Academy
 > Barcelona Activa in collaboration with the Mobile World Capital Barcelona organized a
 > Hackathon by the hand of IT Academy where I had the pleasure to study.
 >
 > To participate in the Hackathon we were asked to perform this technical test.
-
-[![NPM Version][npm-image]][npm-url]]
-[![Downloads Stats][npm-downloads]][npm-url]]
 
 [**Challenge Description:**](#challenge-description)
 - [Functional Requirements](#functional-requirements)
@@ -147,15 +143,19 @@ the experience of the project:
   centralized control.
 
 
-- **Control of participation in activities**: I have implemented a system that prevents users from signing up several times for the same activity.
-  the same activity several times or when the activity has reached its maximum capacity, guaranteeing a correct management of participants.
+- **Control of participation in activities**: I have implemented a system that prevents users from signing up several 
+times for the same activity.
+  the same activity several times or when the activity has reached its maximum capacity, guaranteeing a correct 
+management of participants.
   of participants.
 
-These improvements show how I have integrated my personal vision and experience in the development of the project, and how I have focused on guaranteeing the safety of the participants.
+These improvements show how I have integrated my personal vision and experience in the development of the project, 
+and how I have focused on guaranteeing the safety of the participants.
 focused on ensuring security, usability and scalability.
 
 In addition, you will find my “signature” in the project, adding a little touch of personal humor.
 Because, in the end, for me programming is fun and I enjoy it 😉.
+
 ---
 
 ## Installation and Configuration

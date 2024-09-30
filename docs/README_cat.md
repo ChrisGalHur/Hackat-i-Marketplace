@@ -8,9 +8,6 @@
 > 
 > Per participar en la Hackató ens van demanar que realitzéssim aquesta prova tècnica.
 
-[![NPM Version][npm-image]][npm-url]
-[![Downloads Stats][npm-downloads]][npm-url]
-
 [**Descripció del repte:**](#descripció-del-repte)
 - [Requisits Funcionals](#requisits-funcionals)
 - [Format dels endpoints](#format-dels-endpoints)

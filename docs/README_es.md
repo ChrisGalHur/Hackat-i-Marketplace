@@ -8,9 +8,6 @@
 > 
 > Para participar en la Hackatón nos pidieron que realizaramos esta prueba técnica.
 
-[![NPM Version][npm-image]][npm-url]
-[![Downloads Stats][npm-downloads]][npm-url]
-
 [**Descripción del reto:**](#descripción-del-reto)
 - [Requisitos Funcionales](#requisitos-funcionales)
 - [Formato de los endpoints](#formato-de-los-endpoints)
