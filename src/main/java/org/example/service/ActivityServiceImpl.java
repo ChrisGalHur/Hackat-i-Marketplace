@@ -119,31 +119,6 @@ public class ActivityServiceImpl implements IActivityService {
             throw new RuntimeException("Error adding user to activity: " + e.getMessage(), e);
         }
     }
-
-    @Override
-    public ResponseEntity<byte[]> exportActivitiesAsJson() {
-        try {
-            List<ActivityDTO> activities = activityRepository.findAll().stream()
-                    .map(activity -> modelMapper.map(activity, ActivityDTO.class))
-                    .toList();
-
-            ObjectMapper objectMapper = new ObjectMapper();
-            String jsonString = objectMapper.writeValueAsString(activities);
-
-            byte[] jsonBytes = jsonString.getBytes(StandardCharsets.UTF_8);
-
-            HttpHeaders headers = new HttpHeaders();
-            headers.setContentType(MediaType.APPLICATION_OCTET_STREAM);
-            headers.setContentDisposition(ContentDisposition.attachment().filename("activities.json").build());
-
-            return ResponseEntity.ok()
-                    .headers(headers)
-                    .body(jsonBytes);
-        } catch (Exception e) {
-            log.error("Error exporting activities as JSON: {}", e.getMessage(), e);
-            throw new RuntimeException("Error exporting activities as JSON: " + e.getMessage(), e);
-        }
-    }
     //endregion METHODS
 
     //region EXTRA METHODS
