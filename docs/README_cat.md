@@ -17,7 +17,7 @@
     <li><a href="#requisits-tècnics-i-avaluació">Requisits Tècnics i avaluació</a></li>
 </ul>
 </details>
-<br>
+
 <details>
 <summary><a href="#descripció-de-lapi"><strong>2. Descripció de l'API</strong></a></summary>
 <ul>
@@ -25,7 +25,7 @@
     <li><a href="#la-meva-visió-personal-del-projecte">La meva visió personal del projecte</a></li>
 </ul>
 </details>
-<br>
+
 <details>
 <summary><a href="#instal·lació-i-configuració"><strong>3. Instal·lació i Configuració</strong></a></summary>
 <ul>
@@ -42,7 +42,6 @@
 
 [**- 4. API Endpoints**](#api-endpoints)
 
-
 <details>
 <summary><a href="#ús-de-lapi"><strong>5. Ús de l'API</strong></a></summary>
 <ul>
@@ -58,6 +57,8 @@
     <li><a href="#exportar-activitats-en-format-json">Exportar activitats en format JSON</a></li>
 </ul>
 </details>
+
+[**👉 Autor**](#autor)
 
 ---
 

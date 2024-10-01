@@ -16,7 +16,7 @@
     <li><a href="#technical-requirements-and-evaluation">Technical requirements and evaluation</a></li>
 </ul>
 </details>
-<br>
+
 <details>
 <summary><a href="#api-description"><strong>2. API Description</strong></a></summary>
 <ul>
@@ -24,7 +24,7 @@
     <li><a href="#my-personal-vision-of-the-project">My personal vision of the project</a></li>
 </ul>
 </details>
-<br>
+
 <details>
 <summary><a href="#installation-and-configuration"><strong>3. Installation and Configuration</strong></a></summary>
 <ul>
