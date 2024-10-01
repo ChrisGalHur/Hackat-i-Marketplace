@@ -8,37 +8,57 @@
 > 
 > Per participar en la Hackató ens van demanar que realitzéssim aquesta prova tècnica.
 
-[**Descripció del repte:**](#descripció-del-repte)
-- [Requisits Funcionals](#requisits-funcionals)
-- [Format dels endpoints](#format-dels-endpoints)
-- [Format del JSON](#format-del-json)
-- [Requisits Tècnics i avaluació](#requisits-tècnics-i-avaluació)
+<details>
+<summary><a href="#descripció-del-repte"><strong>1. Descripció del repte</strong></a></summary>
+<ul>
+    <li><a href="#requisits-funcionals">Requisits Funcionals</a></li>
+    <li><a href="#format-dels-endpoints">Format dels endpoints</a></li>
+    <li><a href="#format-del-json">Format del JSON</a></li>
+    <li><a href="#requisits-tècnics-i-avaluació">Requisits Tècnics i avaluació</a></li>
+</ul>
+</details>
+<br>
+<details>
+<summary><a href="#descripció-de-lapi"><strong>2. Descripció de l'API</strong></a></summary>
+<ul>
+    <li><a href="#funcionalitats-principals">Funcionalitats Principals</a></li>
+    <li><a href="#la-meva-visió-personal-del-projecte">La meva visió personal del projecte</a></li>
+</ul>
+</details>
+<br>
+<details>
+<summary><a href="#instal·lació-i-configuració"><strong>3. Instal·lació i Configuració</strong></a></summary>
+<ul>
+    <li><a href="#requisits-previs">Requisits previs</a></li>
+    <li><a href="#instal·lació">Instal·lació</a>
+        <ul>
+            <li><a href="#pas-1-clonar-el-repositori">Pas 1: Clonar el repositori</a></li>
+            <li><a href="#pas-2-configuració-de-larxiu-applicationproperties">Pas 2: Configuració de l'arxiu `application.properties`</a></li>
+            <li><a href="#exemple-de-applicationproperties">Exemple de `application.properties`</a></li>
+        </ul>
+    </li>
+</ul>
+</details>
 
-[**Descripció de l'API**](#descripció-de-lapi)
-  - [Funcionalitats Principals](#funcionalitats-principals)
-  - [La meva visió personal del projecte](#la-meva-visió-personal-del-projecte)
+[**- 4. API Endpoints**](#api-endpoints)
 
 
-[**Instal·lació i Configuració**](#instal·lació-i-configuració)
-- [Requisits previs](#requisits-previs)
-- [Instal·lació:](#instal·lació)
-  - [Pas 1: Clonar el repositori](#pas-1-clonar-el-repositori)
-  - [Pas 2: Configuració de l'arxiu `application.properties`](#pas-2-configuració-de-larxiu-applicationproperties)
-  - [Exemple de `application.properties`](#exemple-de-applicationproperties)
+<details>
+<summary><a href="#ús-de-lapi"><strong>5. Ús de l'API</strong></a></summary>
+<ul>
+    <li><a href="#registre-dusuari">Registre d'usuari</a></li>
+    <li><a href="#autenticació-dusuari">Autenticació d'usuari</a></li>
+    <li><a href="#actualització-de-dades-dusuari">Actualització de dades d'usuari</a></li>
+    <li><a href="#consulta-dinformació-dusuari">Consulta d'informació d'usuari</a></li>
+    <li><a href="#eliminació-dusuari">Eliminació d'usuari</a></li>
+    <li><a href="#creació-duna-nova-activitat">Creació d'una nova activitat</a></li>
+    <li><a href="#eliminació-duna-activitat">Eliminació d'una activitat</a></li>
+    <li><a href="#consulta-de-totes-les-activitats">Consulta de totes les activitats</a></li>
+    <li><a href="#apuntar-se-a-una-activitat">Apuntar-se a una activitat</a></li>
+    <li><a href="#exportar-activitats-en-format-json">Exportar activitats en format JSON</a></li>
+</ul>
+</details>
 
-[**API Endpoints**](#api-endpoints)
-
-[**Ús de l'API**](#ús-de-lapi)
-- [Registre d'usuari](#registre-dusuari)
-- [Autenticació d'usuari](#autenticació-dusuari)
-- [Actualització de dades d'usuari](#actualització-de-dades-dusuari)
-- [Consulta d'informació d'usuari](#consulta-dinformació-dusuari)
-- [Eliminació d'usuari](#eliminació-dusuari)
-- [Creació d'una nova activitat](#creació-duna-nova-activitat)
-- [Eliminació d'una activitat](#eliminació-duna-activitat)
-- [Consulta de totes les activitats](#consulta-de-totes-les-activitats)
-- [Apuntar-se a una activitat](#apuntar-se-a-una-activitat)
-- [Exportar activitats en format JSON](#exportar-activitats-en-format-json)
 ---
 
 ## Descripció del repte
@@ -213,6 +233,8 @@ JWT.
 ---
 
 ## Ús de l'API
+Per utilitzar l'API, pots fer servir una eina com **Postman** o altres eines similars per fer sol·licituds HTTP.
+
 ### Registre d'usuari
 Fes una sol·licitud POST a `/appActivitats/user` amb un JSON com aquest utilitzant les dades de l'usuari que vols registrar:
 ```json
@@ -284,3 +306,10 @@ Per exportar totes les activitats en format JSON, fes una sol·licitud GET a `/a
 Això descarregarà un arxiu JSON amb totes les activitats de l'API.
 
 ---
+
+## Autor
+Aquest projecte va ser desenvolupat per Christian Gálvez Hurtado ([ChrisGalHur](https://github.com/ChrisGalHur)).
+Si tens alguna pregunta o suggeriment, no dubtis a posar-te en contacte.
+
+---
+[🔝 **Tornar a l'inici**](#app-de-gestió-dusuaris-i-activitats---hackathon-it-academy)

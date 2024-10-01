@@ -7,37 +7,58 @@
 >
 > To participate in the Hackathon we were asked to perform this technical test.
 
-[**Challenge Description:**](#challenge-description)
-- [Functional Requirements](#functional-requirements)
-- [Format of the endpoints](#format-of-the-endpoints)
-- [JSON Format](#json-format)
-- [Technical requirements and evaluation](#technical-requirements-and-evaluation)
+<details>
+<summary><a href="#challenge-description"><strong>1. Challenge Description</strong></a></summary>
+<ul>
+    <li><a href="#functional-requirements">Functional Requirements</a></li>
+    <li><a href="#format-of-the-endpoints">Format of the endpoints</a></li>
+    <li><a href="#json-format">JSON Format</a></li>
+    <li><a href="#technical-requirements-and-evaluation">Technical requirements and evaluation</a></li>
+</ul>
+</details>
+<br>
+<details>
+<summary><a href="#api-description"><strong>2. API Description</strong></a></summary>
+<ul>
+    <li><a href="#core-functionalities">Core Functionalities</a></li>
+    <li><a href="#my-personal-vision-of-the-project">My personal vision of the project</a></li>
+</ul>
+</details>
+<br>
+<details>
+<summary><a href="#installation-and-configuration"><strong>3. Installation and Configuration</strong></a></summary>
+<ul>
+    <li><a href="#prerequisites">Prerequisites</a></li>
+    <li><a href="#installation">Installation</a>
+        <ul>
+            <li><a href="#step-1-clone-the-repository">Step 1: Clone the repository</a></li>
+            <li><a href="#step-2-configure-the-applicationproperties-file">Step 2: Configuration of the `application.properties` file</a></li>
+            <li><a href="#exemple-of-applicationproperties">Example of `application.properties`</a></li>
+        </ul>
+    </li>
+</ul>
+</details>
 
-[**API description**](#api-description)
-- [Core Functionalities](#core-functionalities)
-- [My personal vision of the project](#my-personal-vision-of-the-project)
+[**- 4. API Endpoints**](#api-endpoints)
 
+<details>
+<summary><a href="#api-usage"><strong>5. API Usage</strong></a></summary>
+<ul>
+    <li><a href="#user-registration">User-registration</a></li>
+    <li><a href="#user-authentication">User-authentication</a></li>
+    <li><a href="#user-data-update">User data update</a></li>
+    <li><a href="#user-information-query">User information query</a></li>
+    <li><a href="#user-deletion">User deletion</a></li>
+    <li><a href="#creating-a-new-activity">Creating a new activity</a></li>
+    <li><a href="#deleting-an-activity">Deleting an activity</a></li>
+    <li><a href="#viewing-all-activities">Viewing all activities</a></li>
+    <li><a href="#join-an-activity">Join-an-activity</a></li>
+    <li><a href="#export-activities-in-json-format">Export activities in JSON-format</a></li>
+</ul>
+</details>
 
-[**Installation and Configuration**](#installation-and-configuration)
-- [Prerequisites](#prerequisites)
-- [Installation:](#Installation)
-    - [Step 1: Clone the repository](#step-1-clone-the-repository)
-    - [Step 2: Configuration of the `application.properties` file](#step-2-configure-the-applicationproperties-file)
-    - [Example of `application.properties`](#exemple-of-applicationproperties)
+[**👉 Autor**](#autor)
 
-[**API Endpoints**](#api-endpoints)
-
-[**API Usage**](#api-usage)
-- [User-registration](#user-registration)
-- [User-authentication](#user-authentication)
-- [User data update](#user-data-update)
-- [User information query](#user-information-query)
-- [User deletion](#user-deletion)
-- [Creating a new activity](#creating-a-new-activity)
-- [Deleting an activity](#deleting-an-activity)
-- [Viewing all activities](#viewing-all-activities)
-- [Join-an-activity](#join-an-activity)
-- [Export activities in JSON-format](#export-activities-in-json-format)
 ---
 
 ## Challenge description
@@ -216,6 +237,8 @@ server.port=9001
 ---
 
 ## API usage
+To use the API, you can use a tool like **Postman** or any other tool that allows you to make HTTP requests.
+
 ### User Registration
 Make a POST request to `/appActivities/user` with a JSON like this using the data of the user you want to register:
 ````json
@@ -287,3 +310,10 @@ To export all activities in JSON format, make a GET request to `/appActivities/a
 This will download a JSON file with all the API activities.
 
 ---
+
+## Author
+This project was developed by Christian Gálvez Hurtado ([ChrisGalHur](https://github.com/ChrisGalHur)).
+If you have any questions or suggestions, feel free to reach out.
+
+---
+[🔝 **Back to top**](#users-and-activities-management-app---hackathon-it-academy)

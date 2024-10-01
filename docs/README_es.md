@@ -8,37 +8,59 @@
 > 
 > Para participar en la Hackatón nos pidieron que realizaramos esta prueba técnica.
 
-[**Descripción del reto:**](#descripción-del-reto)
-- [Requisitos Funcionales](#requisitos-funcionales)
-- [Formato de los endpoints](#formato-de-los-endpoints)
-- [Formato del JSON](#formato-del-json)
-- [Requisitos Técnicos y evaluación](#requisitos-técnicos-y-evaluación)
 
-[**Descripción de la API**](#descripción-de-la-api)
-  - [Funcionalidades Principales](#funcionalidades-principales)
-  - [Mi visión personal del proyecto](#mi-visión-personal-del-proyecto)
+<details>
+<summary><a href="#descripción-del-reto"><strong>1. Descripción del reto</strong></a></summary>
+<ul>
+    <li><a href="#requisitos-funcionales">Requisitos Funcionales</a></li>
+    <li><a href="#formato-de-los-endpoints">Formato de los Endpoints</a></li>
+    <li><a href="#formato-del-json">Formato del JSON</a></li>
+    <li><a href="#requisitos-técnicos-y-evaluación">Requisitos Técnicos y Evaluación</a></li>
+</ul>
+</details>
+<br>
+<details>
+<summary><a href="#descripción-de-la-api"><strong>2. Descripción de la API</strong></a></summary>
+<ul>
+    <li><a href="#funcionalidades-principales">Funcionalidades Principales</a></li>
+    <li><a href="#mi-visión-personal-del-proyecto">Mi visión personal del proyecto</a></li>
+</ul>
+</details>
+<br>
+<details>
+<summary><a href="#instalación-y-configuración"><strong>3. Instalación y Configuración</strong></a></summary>
+<ul>
+    <li><a href="#requisitos-previos">Requisitos previos</a></li>
+    <li><a href="#Instalación">Instalación</a>
+        <ul>
+            <li><a href="#paso-1-clonar-el-repositorio">Paso 1: Clonar el repositorio</a></li>
+            <li><a href="#paso-2-configuración-del-archivo-applicationproperties">Paso 2: Configuración del archivo `application.properties`</a></li>
+            <li><a href="#ejemplo-de-applicationproperties">Ejemplo de `application.properties`</a></li>
+        </ul>
+    </li>
+</ul>
+</details>
 
+[**- 4. API Endpoints**](#api-endpoints)
 
-[**Instalación y Configuración**](#instalación-y-configuración)
-- [Requisitos previos](#requisitos-previos)
-- [Instalación:](#Instalación)
-  - [Paso 1: Clonar el repositorio](#paso-1-clonar-el-repositorio)
-  - [Paso 2: Configuración del archivo `application.properties`](#paso-2-configuración-del-archivo-applicationproperties)
-  - [Ejemplo de `application.properties`](#ejemplo-de-applicationproperties)
+<details>
+<summary><a href="#uso-de-la-api"><strong>5. Uso de la API</strong></a></summary>
+<ul>
+    <li><a href="#registro-de-usuario">Registro de usuario</a></li>
+    <li><a href="#autenticación-de-usuario">Autenticación de usuario</a></li>
+    <li><a href="#actualización-de-datos-de-usuario">Actualización de datos de usuario</a></li>
+    <li><a href="#consulta-de-información-de-usuario">Consulta de información de usuario</a></li>
+    <li><a href="#eliminación-de-usuario">Eliminación de usuario</a></li>
+    <li><a href="#creación-de-una-nueva-actividad">Creación de una nueva actividad</a></li>
+    <li><a href="#eliminación-de-una-actividad">Eliminación de una actividad</a></li>
+    <li><a href="#consulta-de-todas-las-actividades">Consulta de todas las actividades</a></li>
+    <li><a href="#apuntarse-a-una-actividad">Apuntarse a una actividad</a></li>
+    <li><a href="#exportar-actividades-en-formato-json">Exportar actividades en formato JSON</a></li>
+</ul>
+</details>
 
-[**API Endpoints**](#api-endpoints)
+[**👉 Autor**](#autor)
 
-[**Uso de la API**](#uso-de-la-api)
-- [Registro de usuario](#registro-de-usuario)
-- [Autenticación de usuario](#autenticación-de-usuario)
-- [Actualización de datos de usuario](#actualización-de-datos-de-usuario)
-- [Consulta de información de usuario](#consulta-de-información-de-usuario)
-- [Eliminación de usuario](#eliminación-de-usuario)
-- [Creación de una nueva actividad](#creación-de-una-nueva-actividad)
-- [Eliminación de una actividad](#eliminación-de-una-actividad)
-- [Consulta de todas las actividades](#consulta-de-todas-las-actividades)
-- [Apuntarse a una actividad](#apuntarse-a-una-actividad)
-- [Exportar actividades en formato JSON](#exportar-actividades-en-formato-json)
 ---
 
 ## Descripción del reto
@@ -215,6 +237,9 @@ con JWT.
 ---
 
 ## Uso de la API
+Para interactuar con la API, puedes utilizar una herramienta como **Postman** o otra aplicación de cliente HTTP para
+realizar solicitudes a los endpoints.
+
 ### Registro de usuario
 Haz una solicitud POST a /appActivitats/user con un JSON como este utilizando los datos del usuario que quieres 
 registrar:
@@ -287,3 +312,11 @@ Para exportar todas las actividades en formato JSON, haz una solicitud GET a /ap
 Esto te devolverá un JSON con todas las actividades de la API.
 
 ---
+
+## Autor
+Este proyecto fue desarrollado por Christian Gálvez Hurtado ([ChrisGalHur](https://github.com/ChrisGalHur)). 
+Si tienes alguna pregunta o sugerencia, no dudes en ponerte en contacto.
+
+---
+
+[🔝 **Volver al inicio**](#app-de-gestión-de-usuarios-y-actividades---hackathon-it-academy)
